@@ -1,6 +1,14 @@
 ## The nearby function - aim is to make it easier to
 ## get locations when you don't have a street address
 #' @export
+#' @examples 
+#' \dontrun{ # Server response can be slow; this cuts down check time.
+#' register_google(key=APIkey)
+#' adelaide.cbd <- geocode("Victoria Square, Adelaide, Australia")
+#' h<-nearbyplaces(as.numeric(adelaide.cbd), "hospital", "Royal Adelaide Hospital Emergency Department", radius=2000)
+#' 
+#' For this project I might be better off manually looking up placeIDs
+#' }
 nearbyplaces <- function(location,  placetype, placename, radius=50000,
                          output = c("latlon", "latlona", "more", "all"),
                          messaging = FALSE,
